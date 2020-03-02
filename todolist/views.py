@@ -21,6 +21,8 @@ class DetailView(DetailView):
 class DeleteView(DeleteView):
     model = ToDoList
 
+    success_url = reverse_lazy('todolist:index')
+
 
 class CreateView(CreateView):
     model = ToDoList
