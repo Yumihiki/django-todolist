@@ -11,7 +11,7 @@ class ToDoList(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(verbose_name='タイトル', max_length=10)
     content = models.TextField(verbose_name='内容', max_length=5000)
-    created_date = models.DateField(verbose_name='作成日', default=timezone.now())
+    created_date = models.DateField(verbose_name='作成日', default=timezone.now)
     updated_date = models.DateField(verbose_name='更新日', blank=True, null=True)
 
     THINKING = '考え中'
