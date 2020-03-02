@@ -6,6 +6,5 @@ app_name = 'todolist'
 
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
-    # path('login/', views.login, name='login'),
-    # path('logout/', views.logout, name='logout'),
+    path('<int:pk>/', views.DetailView.as_view(), name='detail'),
 ]

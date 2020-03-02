@@ -12,7 +12,5 @@ class IndexView(ListView):
     paginate_by = 20
 
 
-class ToDoListDetailView(DetailView):
-
+class DetailView(DetailView):
     model = ToDoList
-
