@@ -25,6 +25,7 @@
             <th scope="col">状態</th>
             <th scope="col">詳細</th>
             <th scope="col">削除</th>
+            <th scope="col">更新</th>
         </tr>
         </thead>
         <tbody>
@@ -38,6 +39,7 @@
             <td>{{ item.status }}</td>
             <td><a href="{% url 'todolist:detail' item.id %}">詳細</a></td>
             <td><a href="{% url 'todolist:delete' item.id %}">削除</a></td>
+            <td><a href="{% url 'todolist:update' item.id %}">更新</a></td>
         </tr>
         {% endfor %}
         </tbody>
