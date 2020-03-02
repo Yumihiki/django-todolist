@@ -20,6 +20,13 @@ pip install -r requirements.txt
 開発用サーバーの実行
 python manage.py runserver
 
+
+## 追記する時の流れ
+
+1. urls.pyに追加
+1. views.pyに追加
+1. htmlなどを実際に記述
+
 参考URL
 https://tutorial.djangogirls.org/ja/django_installation/
 
