@@ -5,18 +5,7 @@ from django.views.generic.detail import DetailView
 from .models import ToDoList
 
 
-class IndexView(View):
-    def get(self, request, *args, **kwargs):
-        context = {
-            'message' : "Hello,world",
-        }
-        return render(request, 'index.html', context)
-
-
-index = IndexView.as_view()
-
-
-class ToDoListView(ListView):
+class IndexView(ListView):
 
     model = ToDoList
     queryset = ToDoList.objects.order_by('-created_date')
