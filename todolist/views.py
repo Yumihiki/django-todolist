@@ -19,6 +19,7 @@ index = IndexView.as_view()
 class ToDoListView(ListView):
 
     model = ToDoList
+    queryset = ToDoList.objects.order_by('-created_date')
     paginate_by = 20
 
 
