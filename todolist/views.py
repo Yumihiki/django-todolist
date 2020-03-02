@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
+from django.views.generic.edit import DeleteView
 from .models import ToDoList
 
 
@@ -13,4 +14,8 @@ class IndexView(ListView):
 
 
 class DetailView(DetailView):
+    model = ToDoList
+
+
+class DeleteView(DeleteView):
     model = ToDoList

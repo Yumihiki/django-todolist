@@ -23,6 +23,7 @@
             <th scope="col">更新日時</th>
             <th scope="col">状態</th>
             <th scope="col">詳細</th>
+            <th scope="col">削除</th>
         </tr>
         </thead>
         <tbody>
@@ -35,6 +36,7 @@
             <td>{{ item.updated_date }}</td>
             <td>{{ item.status }}</td>
             <td><a href="{% url 'todolist:detail' item.id %}">詳細</a></td>
+            <td><a href="{% url 'todolist:delete' item.id %}">削除</a></td>
         </tr>
         {% endfor %}
         </tbody>
