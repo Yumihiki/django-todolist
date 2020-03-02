@@ -10,16 +10,15 @@
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous"
     >
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
     <body>
     <h1>やることリスト</h1>
-    <a href="/todolist/create">追加する</a>
+    <a href="/todolist/create"><i class="fas fa-plus"></i>追加する</a>
     <table class="table table-striped">
         <thead>
         <tr>
-            <th scope="col">投稿者</th>
             <th scope="col">タイトル</th>
-            <th scope="col">コンテンツ</th>
             <th scope="col">作成日時</th>
             <th scope="col">更新日時</th>
             <th scope="col">状態</th>
@@ -31,15 +30,25 @@
         <tbody>
         {% for item in todolist_list %}
         <tr>
-            <td>{{ item.author }}</td>
             <td>{{ item.title }}</td>
-            <td>{{ item.content }}</td>
             <td>{{ item.created_date }}</td>
             <td>{{ item.updated_date }}</td>
             <td>{{ item.status }}</td>
-            <td><a href="{% url 'todolist:detail' item.id %}">詳細</a></td>
-            <td><a href="{% url 'todolist:delete' item.id %}">削除</a></td>
-            <td><a href="{% url 'todolist:update' item.id %}">更新</a></td>
+            <td>
+                <button type="button" class="btn" data-toggle="tooltip" data-placement="top" title="詳細">
+                    <a href="{% url 'todolist:detail' item.id %}"><i class="fas fa-list-ul"></i></a>
+                </button>
+            </td>
+            <td>
+                <button type="button" class="btn" data-toggle="tooltip" data-placement="top" title="削除">
+                    <a href="{% url 'todolist:delete' item.id %}"><i class="fas fa-trash-alt"></i></a>
+                </button>
+            </td>
+            <td>
+                <button type="button" class="btn" data-toggle="tooltip" data-placement="top" title="更新">
+                    <a href="{% url 'todolist:update' item.id %}"><i class="fas fa-edit"></i></a>
+                </button>
+            </td>
         </tr>
         {% endfor %}
         </tbody>
