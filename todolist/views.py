@@ -5,6 +5,8 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
 from .models import ToDoList
+from rest_framework import generics
+from .serializers import ToDoListSerializer
 
 
 class IndexView(ListView):
@@ -37,3 +39,13 @@ class UpdateView(UpdateView):
     # updated_dateで更新日を入れる方法は？
     fields = ['author', 'title', 'content', 'status', 'updated_date'] 
     success_url = reverse_lazy('todolist:index')
+
+
+class ListToDoList(generics.ListAPIView):
+    queryset = ToDoList.objects.all()
+    serializer_class = ToDoListSerializer
+
+
+class DetailToDoList(generics.RetrieveAPIView):
+    queryset = ToDoList.objects.all()
+    serializer_class = ToDoListSerializer
