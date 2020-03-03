@@ -35,6 +35,14 @@ Username: 任意の名前
 Email Adress: 任意の名前
 Password: 任意のパスワード
 
+## Django REST Frameworkについて
+
+pip install djangorestframework
+
+setting.pyに追記
+
+python manage.py startapp api
+
 ## 追記する時の流れ
 
 1. urls.pyに追加
