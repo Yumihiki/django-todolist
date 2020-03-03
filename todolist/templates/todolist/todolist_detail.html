@@ -1,3 +1,5 @@
+{% block content %}
+
 <h1>タイトル：{{ todolist.title }}</h1>
 <ul>
     <li>コメント：{{ todolist.content }}</li>
@@ -6,3 +8,5 @@
     <li>状態：{{ todolist.status }}</li>
 </ul>
 <a href="/todolist/">戻る</a>
+
+{% endblock %}

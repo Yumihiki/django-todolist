@@ -1,5 +1,9 @@
+{% block content %}
+
 <form method="post">{% csrf_token %}
     <p>この内容を削除しますか？ "{{ object }}"?</p>
     <input type="submit" value="削除">
 </form>
 <a href="/todolist/">戻る</a>
+
+{% endblock %}
